@@ -1,0 +1,671 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A special friendship letter and Thillai Data Tech digital solutions.">
+<title>Friendship Mail 💗</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg,#ffe1ec,#f4ddff,#fff0f5);
+    color: #783c58;
+    overflow-x: hidden;
+}
+
+/* FRIENDSHIP */
+
+.friendship {
+    min-height: 100vh;
+    padding: 45px 18px;
+    text-align: center;
+}
+
+.heading {
+    color: #d94c83;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #98647d;
+    margin-bottom: 30px;
+}
+
+.envelope-area {
+    position: relative;
+    width: 290px;
+    height: 200px;
+    margin: 75px auto 35px;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.envelope {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f49abb;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px #d88da955;
+}
+
+.envelope::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    border-left: 145px solid transparent;
+    border-right: 145px solid transparent;
+    border-bottom: 110px solid #e879a3;
+    z-index: 3;
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 145px solid transparent;
+    border-right: 145px solid transparent;
+    border-top: 115px solid #f8b5ce;
+    transform-origin: top;
+    transition: transform .8s;
+    z-index: 4;
+}
+
+.heart-seal {
+    position: absolute;
+    top: 80px;
+    left: 125px;
+    font-size: 38px;
+    z-index: 5;
+    transition: .5s;
+}
+
+.letter {
+    position: absolute;
+    width: 85%;
+    height: 170px;
+    background: #fffdfd;
+    top: 10px;
+    left: 7.5%;
+    border-radius: 8px;
+    transition: transform 1s;
+    z-index: 2;
+}
+
+.envelope-area.open .flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.envelope-area.open .letter {
+    transform: translateY(-150px);
+}
+
+.envelope-area.open .heart-seal {
+    opacity: 0;
+}
+
+.open-text {
+    color: #c34d7d;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+.letter-content {
+    display: none;
+    max-width: 550px;
+    margin: 35px auto;
+    padding: 30px 25px;
+    background: rgba(255,255,255,.95);
+    border-radius: 22px;
+    box-shadow: 0 10px 35px #d88da944;
+    line-height: 1.9;
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.letter-content h2 {
+    color: #e45d91;
+    margin-bottom: 20px;
+}
+
+.letter-content p {
+    margin: 15px 0;
+    font-size: 15px;
+}
+
+.signature {
+    margin-top: 25px;
+    color: #d94c83;
+    font-weight: bold;
+}
+
+.surprise-btn {
+    border: none;
+    background: linear-gradient(45deg,#ee6b9b,#d84d88);
+    color: white;
+    padding: 13px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+#surprise {
+    display: none;
+    margin-top: 25px;
+    color: #d94c83;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.footer {
+    margin-top: 30px;
+    color: #a46b86;
+    font-size: 13px;
+}
+
+/* HEART ANIMATION */
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    pointer-events: none;
+    animation: floatUp 5s linear forwards;
+    z-index: 100;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ADVERTISEMENT */
+
+.section-divider {
+    text-align: center;
+    padding: 35px 15px;
+    color: #c34d7d;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.advertisement {
+    background:
+        radial-gradient(circle at top right,#45316e 0%,transparent 40%),
+        linear-gradient(135deg,#101b25,#182b2a,#201738);
+    color: white;
+    padding: 65px 20px;
+}
+
+.ad-container {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.ad-label {
+    display: inline-block;
+    color: #d8b76a;
+    border: 1px solid #d8b76a;
+    border-radius: 30px;
+    padding: 8px 20px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+}
+
+.company-name {
+    font-size: 36px;
+    letter-spacing: 2px;
+    color: #e6c878;
+    margin-bottom: 10px;
+}
+
+.company-tagline {
+    color: #a8e6c1;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.ad-heading {
+    font-size: 30px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.ad-description {
+    color: #d0d5d7;
+    max-width: 600px;
+    margin: 0 auto 35px;
+    line-height: 1.8;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+    margin: 35px 0;
+}
+
+.service-card {
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(220,200,120,.3);
+    border-radius: 15px;
+    padding: 22px 12px;
+    transition: .3s;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    background: rgba(255,255,255,.13);
+}
+
+.service-icon {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.service-card h3 {
+    color: #e6c878;
+    font-size: 15px;
+}
+
+.service-card p {
+    color: #c6d1ce;
+    font-size: 12px;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+.growth-text {
+    color: #a8e6c1;
+    font-size: 23px;
+    font-weight: bold;
+    margin: 30px 0 12px;
+}
+
+.contact-text {
+    color: #d4d4d4;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.contact-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.contact-btn {
+    text-decoration: none;
+    padding: 13px 22px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.contact-btn:hover {
+    transform: scale(1.06);
+}
+
+.whatsapp {
+    background: #20b76b;
+    color: white;
+}
+
+.instagram {
+    background: linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7);
+    color: white;
+}
+
+.email {
+    background: #e5c36d;
+    color: #17221e;
+}
+
+.ad-footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #ffffff25;
+    color: #aab4b1;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+    .heading { font-size: 27px; }
+    .services { grid-template-columns: repeat(2,1fr); }
+    .company-name { font-size: 27px; }
+    .ad-heading { font-size: 24px; }
+    .letter-content { padding: 25px 18px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- FRIENDSHIP MAIL SECTION -->
+
+<section class="friendship">
+
+    <h1 class="heading">💗 Friendship Mail 💗</h1>
+
+    <p class="subtitle">
+        A little surprise for someone special...
+    </p>
+
+    <div class="envelope-area"
+         id="envelope"
+         onclick="openLetter()">
+
+        <div class="envelope"></div>
+        <div class="letter"></div>
+        <div class="flap"></div>
+        <div class="heart-seal">💌</div>
+
+    </div>
+
+    <p class="open-text" id="openText">
+        Tap the envelope to open your letter 💕
+    </p>
+
+    <div class="letter-content" id="letterContent">
+
+        <!-- EDIT FRIEND NAME HERE -->
+
+        <h2>Dear Best Friend! 🥰</h2>
+
+        <p>Hey! ❤️</p>
+
+        <p>
+            I don't know how to explain how special
+            your friendship is to me.
+        </p>
+
+        <p>
+            Thank you for being part of my life.
+            Thank you for every smile, every laugh,
+            every silly conversation and every memory.
+        </p>
+
+        <p>
+            Life is not always perfect, but having
+            a friend like you makes everything
+            a little more beautiful.
+        </p>
+
+        <p>
+            No matter how busy life gets,
+            I hope our friendship never changes.
+        </p>
+
+        <p>
+            Distance, time and situations may change,
+            but true friendship will always remain
+            in our hearts. 💗
+        </p>
+
+        <h3>Forever Friends! 🫂</h3>
+
+        <!-- EDIT SENDER NAME HERE -->
+
+        <div class="signature">
+            With lots of love,<br>
+            <span contenteditable="true">Your Best Friend</span>
+        </div>
+
+        <button class="surprise-btn"
+                onclick="showSurprise()">
+            Open a Little Surprise 🎁
+        </button>
+
+        <div id="surprise">
+            You are not just my friend...<br>
+            You are one of my favourite chapters
+            in this beautiful life! 💖
+            <br><br>
+            Always Stay Happy! 🌸
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Made with ❤️ for a special friendship
+    </div>
+
+</section>
+
+<!-- ADVERTISEMENT DIVIDER -->
+
+<div class="section-divider">
+    ✨ One More Surprise! ✨
+</div>
+
+<!-- THILLAI DATA TECH ADVERTISEMENT -->
+
+<section class="advertisement">
+
+    <div class="ad-container">
+
+        <span class="ad-label">
+            TECHNOLOGY • INNOVATION • GROWTH
+        </span>
+
+        <h1 class="company-name">
+            THILLAI DATA TECH
+        </h1>
+
+        <p class="company-tagline">
+            Smart Digital Solutions
+        </p>
+
+        <h2 class="ad-heading">
+            Transform Your Ideas<br>
+            Into Digital Reality.
+        </h2>
+
+        <p class="ad-description">
+            We help businesses grow with smart technology,
+            creative digital solutions and professional
+            services. Take your business to the next level
+            with Thillai Data Tech.
+        </p>
+
+        <div class="services">
+
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h3>Web Development</h3>
+                <p>Modern and responsive websites for your business.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Data Analytics</h3>
+                <p>Turn business data into meaningful insights.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🚀</div>
+                <h3>Business Solutions</h3>
+                <p>Digital solutions to support business growth.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Branding Services</h3>
+                <p>Creative identity and branding solutions.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🛠️</div>
+                <h3>Technical Support</h3>
+                <p>Technology assistance and digital support.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🌐</div>
+                <h3>Digital Services</h3>
+                <p>Helping you build your digital presence.</p>
+            </div>
+
+        </div>
+
+        <p class="growth-text">
+            Let's Grow Together! 💚
+        </p>
+
+        <p class="contact-text">
+            Have an idea or need a digital solution?<br>
+            Connect with Thillai Data Tech today.
+        </p>
+
+        <!-- CONTACT LINKS -->
+
+        <div class="contact-buttons">
+
+            <!-- Replace with your actual WhatsApp number -->
+
+            <a class="contact-btn whatsapp"
+               href="https://wa.me/91XXXXXXXXXX"
+               target="_blank"
+               rel="noopener noreferrer">
+                WhatsApp
+            </a>
+
+            <a class="contact-btn instagram"
+               href="https://www.instagram.com/thillai_data_tech/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Instagram
+            </a>
+
+            <a class="contact-btn email"
+               href="mailto:thillaidatatech@gmail.com">
+                Email Us
+            </a>
+
+        </div>
+
+        <div class="ad-footer">
+            THILLAI DATA TECH<br>
+            Smart Digital Solutions for Your Business<br>
+            © 2026 Thillai Data Tech. All Rights Reserved.
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+// OPEN LETTER
+
+let opened = false;
+
+function openLetter() {
+
+    if (opened) return;
+
+    opened = true;
+
+    document.getElementById("envelope")
+        .classList.add("open");
+
+    document.getElementById("openText")
+        .style.display = "none";
+
+    setTimeout(() => {
+
+        document.getElementById("letterContent")
+            .style.display = "block";
+
+        document.getElementById("letterContent")
+            .scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        createHearts();
+
+    }, 900);
+}
+
+
+// SURPRISE MESSAGE
+
+function showSurprise() {
+
+    const surprise = document.getElementById("surprise");
+
+    surprise.style.display = "block";
+
+    createHearts();
+
+    surprise.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+}
+
+
+// FLOATING HEARTS
+
+function createHearts() {
+
+    const symbols = ["💗","💕","💖","❤️","🌸"];
+
+    for (let i = 0; i < 18; i++) {
+
+        let heart = document.createElement("div");
+
+        heart.className = "heart";
+
+        heart.innerHTML =
+            symbols[Math.floor(Math.random() * symbols.length)];
+
+        heart.style.left = Math.random() * 100 + "vw";
+
+        heart.style.fontSize =
+            (15 + Math.random() * 20) + "px";
+
+        heart.style.animationDuration =
+            (3 + Math.random() * 4) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 7000);
+
+    }
+}
+
+</script>
+
+</body>
+</html>
